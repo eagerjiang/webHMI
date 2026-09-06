@@ -7,7 +7,7 @@ import OverviewPage from './components/OverviewPage.vue'
 import LockMarkPage from './components/LockMarkPage.vue'
 import AlarmDrawer from './components/AlarmDrawer.vue'
 
-//  是页面间共享的唯一领域状态；App 只负责页面壳层和跨页报警抽屉编排..
+// useHmi 是页面间共享的唯一领域状态；App 只负责页面壳层和跨页报警抽屉编排..
 const hmi = useHmi()
 const showAlarms = ref(false)
 const selectedForAlarm = computed(() => hmi.alarmQueue.value)
