@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4000" height="1480" viewBox="0 0 4000 1480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a131a"/><stop offset="1" stop-color="#071016"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14232d"/><stop offset="1" stop-color="#0e1a22"/>
+    </linearGradient>
+    <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10232d"/><stop offset="1" stop-color="#0c1820"/>
+    </linearGradient>
+    <linearGradient id="machine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#314957"/><stop offset="1" stop-color="#1c313d"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#29404b" stroke-opacity=".34"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".28"/>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <style>
+      text { font-family: 'PingFang SC','Microsoft YaHei','Helvetica Neue',Arial,sans-serif; }
+      .tiny { font-size: 16px; letter-spacing: .4px; }
+      .small { font-size: 20px; letter-spacing: .3px; }
+      .body { font-size: 24px; }
+      .label { font-size: 22px; fill: #8fa3af; }
+      .value { font-size: 30px; font-weight: 600; fill: #e8f0f4; }
+      .title { font-size: 34px; font-weight: 600; fill: #e8f0f4; }
+      .muted { fill: #8fa3af; }
+      .line { stroke: #29404b; stroke-width: 2; }
+      .cyan { fill: #27d4ed; }
+      .green { fill: #40d998; }
+      .amber { fill: #ffc857; }
+      .red { fill: #ff6565; }
+      .screen { fill: url(#bg); stroke: #29404b; stroke-width: 2; }
+      .surface { fill: url(#panel); stroke: #29404b; stroke-width: 2; }
+      .chip { fill: #132d38; stroke: #275968; stroke-width: 2; }
+      .button { fill: #172a35; stroke: #39515d; stroke-width: 2; }
+      .button-active { fill: #123d49; stroke: #27d4ed; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="4000" height="1480" fill="#051016"/>
+  <text x="40" y="64" class="title">VISU·19 / Web HMI UI 设计稿 · v1.3</text>
+  <text x="40" y="101" class="small muted">1920×1080 工业触摸屏 · 2.5D Canvas 设备总览 · 锁定标记检测 · P0/P1 交付基线</text>
+  <rect x="40" y="124" width="3920" height="2" fill="#29404b"/>
+
+  <!-- SCREEN 1 -->
+  <g id="screen-machine" transform="translate(40 170)">
+    <rect class="screen" width="1920" height="1080" rx="18"/>
+    <rect x="0" y="0" width="1920" height="84" rx="18" fill="#0d1b24"/>
+    <rect x="0" y="82" width="1920" height="2" fill="#29404b"/>
+    <g transform="translate(28 22)">
+      <rect width="42" height="42" rx="12" fill="#27d4ed"/>
+      <text x="8" y="31" font-size="23" font-weight="700" fill="#08131a">V²</text>
+      <text x="58" y="21" class="body" font-weight="600" fill="#e8f0f4">VISU·19</text>
+      <text x="58" y="43" class="tiny muted">凹版印刷线 · HMI 02</text>
+    </g>
+    <g transform="translate(300 16)">
+      <line x1="0" y1="0" x2="0" y2="53" class="line"/>
+      <text x="20" y="18" class="tiny muted">当前订单</text><text x="20" y="47" class="value">20240603</text>
+      <line x1="190" y1="0" x2="190" y2="53" class="line"/>
+      <text x="212" y="18" class="tiny muted">材料宽度</text><text x="212" y="47" class="value">600.0 <tspan class="small muted">mm</tspan></text>
+      <line x1="410" y1="0" x2="410" y2="53" class="line"/>
+      <text x="432" y="18" class="tiny muted">线速度</text><text x="432" y="47" class="value">24.0 <tspan class="small muted">m/min</tspan></text>
+      <line x1="650" y1="0" x2="650" y2="53" class="line"/>
+      <text x="672" y="18" class="tiny muted">联动状态</text><text x="672" y="47" class="value">自动 <tspan class="small muted">主机同步</tspan></text>
+    </g>
+    <g transform="translate(1592 29)">
+      <circle cx="9" cy="10" r="7" fill="#40d998"/><circle cx="9" cy="10" r="14" fill="none" stroke="#40d998" stroke-opacity=".25" stroke-width="5"/>
+      <text x="30" y="16" class="small" fill="#40d998">运行中</text><text x="150" y="16" class="small muted">2026-08-12 19:42</text>
+    </g>
+
+    <!-- left nav -->
+    <rect x="0" y="84" width="106" height="996" fill="#0b1820"/>
+    <line x1="106" y1="84" x2="106" y2="1080" class="line"/>
+    <g transform="translate(12 116)">
+      <rect width="82" height="72" rx="12" class="button-active"/>
+      <path d="M28 31h26v23H28z M33 24h16v7H33z M35 55h12" fill="none" stroke="#27d4ed" stroke-width="3"/>
+      <text x="13" y="65" class="tiny" fill="#27d4ed">整机浏览</text>
+      <rect y="88" width="82" height="72" rx="12" class="button"/>
+      <path d="M29 113h24M29 121h24M29 129h16" fill="none" stroke="#8fa3af" stroke-width="3"/>
+      <text x="15" y="153" class="tiny muted">锁定标记</text>
+      <rect y="176" width="82" height="72" rx="12" class="button"/>
+      <circle cx="41" cy="204" r="14" fill="none" stroke="#8fa3af" stroke-width="3"/><path d="M41 195v10l7 5" fill="none" stroke="#8fa3af" stroke-width="3"/>
+      <text x="25" y="241" class="tiny muted">趋势</text>
+      <rect y="264" width="82" height="72" rx="12" class="button"/>
+      <path d="M41 283l5 10 11 2-8 8 2 11-10-5-10 5 2-11-8-8 11-2z" fill="none" stroke="#8fa3af" stroke-width="3"/>
+      <text x="25" y="329" class="tiny muted">报警</text>
+    </g>
+    <g transform="translate(20 995)"><circle cx="33" cy="16" r="13" fill="none" stroke="#8fa3af" stroke-width="3"/><path d="M33 9v8l6 4" fill="none" stroke="#8fa3af" stroke-width="3"/><text x="0" y="48" class="tiny muted">设置</text></g>
+
+    <!-- title and controls -->
+    <text x="142" y="133" class="title">整机浏览</text><text x="142" y="163" class="small muted">整线走料、运行状态与色组参数联动</text>
+    <g transform="translate(1430 112)"><rect width="162" height="46" rx="8" class="button"/><text x="19" y="30" class="small muted">结构视图</text><path d="M136 19l7 7-7 7" fill="none" stroke="#8fa3af" stroke-width="2"/></g>
+    <g transform="translate(1604 112)"><rect width="138" height="46" rx="8" class="button-active"/><text x="18" y="30" class="small" fill="#27d4ed">工艺视图</text></g>
+    <g transform="translate(1754 112)"><rect width="132" height="46" rx="8" class="button"/><text x="17" y="30" class="small muted">适应视图</text></g>
+
+    <!-- machine canvas -->
+    <g transform="translate(142 185)">
+      <rect width="1268" height="612" rx="16" fill="url(#canvas)" stroke="#29404b" stroke-width="2"/>
+      <rect width="1268" height="612" rx="16" fill="url(#grid)"/>
+      <text x="24" y="34" class="small muted">2.5D CANVAS / 工艺路径</text>
+      <g transform="translate(32 80)">
+        <!-- base and web -->
+        <polygon points="70,340 1122,340 1180,402 18,402" fill="#142a35" stroke="#34505c" stroke-width="3"/>
+        <polygon points="54,314 1148,314 1180,340 70,340" fill="#243d49" stroke="#47606b" stroke-width="3"/>
+        <path d="M32 265 C210 245 340 265 480 263 S760 245 910 266 S1090 264 1178 266" fill="none" stroke="#27d4ed" stroke-width="12" stroke-opacity=".2"/>
+        <path d="M32 265 C210 245 340 265 480 263 S760 245 910 266 S1090 264 1178 266" fill="none" stroke="#27d4ed" stroke-width="3" stroke-dasharray="14 10"/>
+        <text x="510" y="248" class="tiny" fill="#27d4ed">MATERIAL WEB · 600 mm</text>
+        <!-- unwind -->
+        <g transform="translate(0 70)">
+          <polygon points="10,0 126,0 148,30 148,222 126,250 10,250 0,220 0,30" fill="url(#machine)" stroke="#6a8793" stroke-width="3"/>
+          <ellipse cx="70" cy="70" rx="43" ry="24" fill="#1a3642" stroke="#7f9aa4" stroke-width="3"/><ellipse cx="70" cy="70" rx="17" ry="10" fill="#27d4ed"/><ellipse cx="70" cy="182" rx="41" ry="22" fill="#263d47" stroke="#7f9aa4" stroke-width="3"/>
+          <text x="20" y="278" class="body" fill="#e8f0f4">放卷 A/B</text><text x="27" y="307" class="small muted">Ø 760 mm</text><circle cx="132" cy="18" r="7" fill="#40d998"/>
+        </g>
+        <!-- stations -->
+        <g transform="translate(165 40)">
+          <g transform="translate(0 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#6c8791" stroke-width="3"/><polygon points="80,16 97,29 97,236 80,258" fill="#263f4a" stroke="#6c8791" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#53c5e8"/><circle cx="67" cy="17" r="6" fill="#40d998"/><text x="26" y="292" class="body">01</text></g>
+          <g transform="translate(104 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#6c8791" stroke-width="3"/><polygon points="80,16 97,29 97,236 80,258" fill="#263f4a" stroke="#6c8791" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#171a1d"/><circle cx="67" cy="17" r="6" fill="#40d998"/><text x="26" y="292" class="body">02</text></g>
+          <g transform="translate(208 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#27d4ed" stroke-width="4"/><polygon points="80,16 97,29 97,236 80,258" fill="#214451" stroke="#27d4ed" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#6041e8"/><circle cx="67" cy="17" r="6" fill="#40d998"/><text x="26" y="292" class="body" fill="#27d4ed">03</text></g>
+          <g transform="translate(312 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#6c8791" stroke-width="3"/><polygon points="80,16 97,29 97,236 80,258" fill="#263f4a" stroke="#6c8791" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#d92e61"/><circle cx="67" cy="17" r="6" fill="#ffc857"/><text x="26" y="292" class="body">04</text></g>
+          <g transform="translate(416 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#6c8791" stroke-width="3"/><polygon points="80,16 97,29 97,236 80,258" fill="#263f4a" stroke="#6c8791" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#d7d51a"/><circle cx="67" cy="17" r="6" fill="#40d998"/><text x="26" y="292" class="body">05</text></g>
+          <g transform="translate(520 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#6c8791" stroke-width="3"/><polygon points="80,16 97,29 97,236 80,258" fill="#263f4a" stroke="#6c8791" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#3cb5d8"/><circle cx="67" cy="17" r="6" fill="#40d998"/><text x="26" y="292" class="body">06</text></g>
+          <g transform="translate(624 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#6c8791" stroke-width="3"/><polygon points="80,16 97,29 97,236 80,258" fill="#263f4a" stroke="#6c8791" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#b93ccf"/><circle cx="67" cy="17" r="6" fill="#40d998"/><text x="26" y="292" class="body">07</text></g>
+          <g transform="translate(728 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#6c8791" stroke-width="3"/><polygon points="80,16 97,29 97,236 80,258" fill="#263f4a" stroke="#6c8791" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#98a1a8"/><circle cx="67" cy="17" r="6" fill="#40d998"/><text x="26" y="292" class="body">08</text></g>
+          <g transform="translate(832 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#6c8791" stroke-width="3"/><polygon points="80,16 97,29 97,236 80,258" fill="#263f4a" stroke="#6c8791" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#ee7bd5"/><circle cx="67" cy="17" r="6" fill="#40d998"/><text x="26" y="292" class="body">09</text></g>
+          <g transform="translate(936 0)"><rect width="80" height="258" rx="9" fill="#1a303b" stroke="#6c8791" stroke-width="3"/><polygon points="80,16 97,29 97,236 80,258" fill="#263f4a" stroke="#6c8791" stroke-width="3"/><ellipse cx="40" cy="56" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><ellipse cx="40" cy="158" rx="24" ry="13" fill="#273d47" stroke="#8aa0a8" stroke-width="3"/><rect x="10" y="221" width="60" height="14" rx="6" fill="#ee7649"/><circle cx="67" cy="17" r="6" fill="#40d998"/><text x="26" y="292" class="body">10</text></g>
+        </g>
+        <!-- rewind -->
+        <g transform="translate(1080 70)">
+          <polygon points="10,0 126,0 148,30 148,222 126,250 10,250 0,220 0,30" fill="url(#machine)" stroke="#6a8793" stroke-width="3"/>
+          <ellipse cx="70" cy="70" rx="43" ry="24" fill="#1a3642" stroke="#7f9aa4" stroke-width="3"/><ellipse cx="70" cy="70" rx="17" ry="10" fill="#27d4ed"/><ellipse cx="70" cy="182" rx="41" ry="22" fill="#263d47" stroke="#7f9aa4" stroke-width="3"/>
+          <text x="20" y="278" class="body" fill="#e8f0f4">收卷 A/B</text><text x="27" y="307" class="small muted">Ø 550 mm</text><circle cx="132" cy="18" r="7" fill="#40d998"/>
+        </g>
+        <text x="510" y="422" class="tiny muted">放卷 A/B</text><text x="954" y="422" class="tiny muted">收卷 A/B</text>
+      </g>
+      <g transform="translate(1040 32)"><circle cx="8" cy="8" r="6" fill="#40d998"/><text x="22" y="14" class="tiny muted">运行</text><circle cx="94" cy="8" r="6" fill="#ffc857"/><text x="108" y="14" class="tiny muted">注意</text><circle cx="174" cy="8" r="6" fill="#ff6565"/><text x="188" y="14" class="tiny muted">报警</text></g>
+    </g>
+
+    <!-- selected station inspector -->
+    <g transform="translate(1430 185)">
+      <rect width="456" height="612" rx="16" class="surface"/>
+      <rect width="456" height="76" rx="16" fill="#172b36"/>
+      <rect x="24" y="20" width="14" height="36" rx="4" fill="#6041e8"/>
+      <text x="56" y="38" class="title" font-size="28">PU3 色组</text>
+      <text x="56" y="62" class="tiny muted">蓝紫 · 凹印单元 · 当前选中 03</text>
+      <circle cx="352" cy="34" r="7" fill="#40d998"/>
+      <text x="370" y="41" class="small" fill="#40d998">运行</text>
+      <text x="24" y="112" class="small muted">套色与走料</text>
+      <line x1="24" y1="128" x2="432" y2="128" class="line"/>
+      <text x="24" y="166" class="label">纵向偏差</text><text x="280" y="166" class="value">+0.03 <tspan class="small muted">mm</tspan></text>
+      <text x="24" y="208" class="label">横向偏差</text><text x="280" y="208" class="value">−0.01 <tspan class="small muted">mm</tspan></text>
+      <text x="24" y="250" class="label">段间张力</text><text x="294" y="250" class="value">83.2 <tspan class="small muted">N</tspan></text>
+      <text x="24" y="296" class="small muted">工艺参数</text>
+      <line x1="24" y1="312" x2="432" y2="312" class="line"/>
+      <text x="24" y="350" class="label">版辊转速</text><text x="286" y="350" class="value">128 <tspan class="small muted">rpm</tspan></text>
+      <text x="24" y="392" class="label">刮刀压力</text><text x="280" y="392" class="value">0.32 <tspan class="small muted">MPa</tspan></text>
+      <text x="24" y="434" class="label">压印压力</text><text x="280" y="434" class="value">0.46 <tspan class="small muted">MPa</tspan></text>
+      <text x="24" y="476" class="label">干燥温度</text><text x="282" y="476" class="value">57.0 <tspan class="small muted">°C</tspan></text>
+      <text x="24" y="518" class="label">油墨黏度</text><text x="292" y="518" class="value">18.4 <tspan class="small muted">s</tspan></text>
+      <rect x="24" y="548" width="408" height="46" rx="9" class="button-active"/>
+      <text x="137" y="578" class="small" fill="#27d4ed">进入锁定标记 · PU3 →</text>
+    </g>
+
+    <!-- lower panels -->
+    <g transform="translate(142 824)">
+      <rect width="700" height="220" rx="14" class="surface"/><rect width="700" height="50" rx="14" fill="#172b36"/>
+      <text x="22" y="33" class="body" fill="#e8f0f4">收放卷摘要</text><text x="548" y="33" class="small" fill="#40d998">● 走料稳定</text>
+      <text x="24" y="86" class="label">放卷活动轴</text><text x="240" y="86" class="value">A</text><text x="375" y="86" class="label">卷径</text><text x="482" y="86" class="value">760 <tspan class="small muted">mm</tspan></text>
+      <line x1="24" y1="106" x2="676" y2="106" class="line"/><text x="24" y="140" class="label">收卷活动轴</text><text x="240" y="140" class="value">B</text><text x="375" y="140" class="label">卷径</text><text x="482" y="140" class="value">550 <tspan class="small muted">mm</tspan></text>
+      <rect x="24" y="163" width="652" height="38" rx="8" class="button"/><text x="252" y="188" class="small muted">总计长 12,840.6 m</text>
+    </g>
+    <g transform="translate(862 824)">
+      <rect width="548" height="220" rx="14" class="surface"/><rect width="548" height="50" rx="14" fill="#172b36"/><text x="22" y="33" class="body" fill="#e8f0f4">快速设定</text><text x="405" y="33" class="small muted">联动速度</text>
+      <text x="22" y="92" class="label">目标速度</text><text x="160" y="92" class="value">24.0 <tspan class="small muted">m/min</tspan></text><rect x="356" y="67" width="72" height="38" rx="8" class="button-active"/><text x="375" y="92" class="small" fill="#27d4ed">24</text><rect x="438" y="67" width="72" height="38" rx="8" class="button"/><text x="457" y="92" class="small muted">36</text>
+      <text x="22" y="145" class="label">自动加速时间</text><text x="230" y="145" class="value">8.0 <tspan class="small muted">s</tspan></text><text x="22" y="189" class="label">自动减速时间</text><text x="230" y="189" class="value">8.0 <tspan class="small muted">s</tspan></text>
+    </g>
+    <g transform="translate(1430 824)">
+      <rect width="456" height="220" rx="14" class="surface"/><rect width="456" height="50" rx="14" fill="#172b36"/><text x="22" y="33" class="body" fill="#e8f0f4">事件与报警</text><text x="352" y="33" class="small" fill="#ffc857">1 条注意</text>
+      <circle cx="28" cy="87" r="6" fill="#ffc857"/><text x="48" y="93" class="small" fill="#e8f0f4">04 色组温度接近上限</text><text x="325" y="93" class="tiny muted">19:41:08</text>
+      <line x1="22" y1="112" x2="434" y2="112" class="line"/><circle cx="28" cy="145" r="6" fill="#27d4ed"/><text x="48" y="151" class="small" fill="#e8f0f4">联动速度已稳定</text><text x="325" y="151" class="tiny muted">19:39:32</text><line x1="22" y1="170" x2="434" y2="170" class="line"/><circle cx="28" cy="201" r="6" fill="#27d4ed"/><text x="48" y="207" class="small" fill="#e8f0f4">订单开始生产</text><text x="325" y="207" class="tiny muted">19:32:15</text>
+    </g>
+  </g>
+
+  <!-- SCREEN 2 -->
+  <g id="screen-mark" transform="translate(2040 170)">
+    <rect class="screen" width="1920" height="1080" rx="18"/>
+    <rect x="0" y="0" width="1920" height="84" rx="18" fill="#0d1b24"/><rect x="0" y="82" width="1920" height="2" fill="#29404b"/>
+    <g transform="translate(28 22)"><rect width="42" height="42" rx="12" fill="#27d4ed"/><text x="8" y="31" font-size="23" font-weight="700" fill="#08131a">V²</text><text x="58" y="21" class="body" font-weight="600" fill="#e8f0f4">VISU·19</text><text x="58" y="43" class="tiny muted">凹版印刷线 · HMI 02</text></g>
+    <g transform="translate(300 16)"><line x1="0" y1="0" x2="0" y2="53" class="line"/><text x="20" y="18" class="tiny muted">当前订单</text><text x="20" y="47" class="value">20240603</text><line x1="190" y1="0" x2="190" y2="53" class="line"/><text x="212" y="18" class="tiny muted">材料宽度</text><text x="212" y="47" class="value">600.0 <tspan class="small muted">mm</tspan></text><line x1="410" y1="0" x2="410" y2="53" class="line"/><text x="432" y="18" class="tiny muted">线速度</text><text x="432" y="47" class="value">24.0 <tspan class="small muted">m/min</tspan></text><line x1="650" y1="0" x2="650" y2="53" class="line"/><text x="672" y="18" class="tiny muted">联动状态</text><text x="672" y="47" class="value">自动 <tspan class="small muted">主机同步</tspan></text></g>
+    <g transform="translate(1592 29)"><circle cx="9" cy="10" r="7" fill="#40d998"/><circle cx="9" cy="10" r="14" fill="none" stroke="#40d998" stroke-opacity=".25" stroke-width="5"/><text x="30" y="16" class="small" fill="#40d998">运行中</text><text x="150" y="16" class="small muted">2026-08-12 19:42</text></g>
+    <!-- left nav -->
+    <rect x="0" y="84" width="106" height="996" fill="#0b1820"/><line x1="106" y1="84" x2="106" y2="1080" class="line"/>
+    <g transform="translate(12 116)"><rect width="82" height="72" rx="12" class="button"/><text x="13" y="65" class="tiny muted">整机浏览</text><path d="M28 31h26v23H28z M33 24h16v7H33z" fill="none" stroke="#8fa3af" stroke-width="3"/><rect y="88" width="82" height="72" rx="12" class="button-active"/><path d="M29 113h24M29 121h24M29 129h16" fill="none" stroke="#27d4ed" stroke-width="3"/><text x="15" y="153" class="tiny" fill="#27d4ed">锁定标记</text><rect y="176" width="82" height="72" rx="12" class="button"/><text x="25" y="241" class="tiny muted">趋势</text><rect y="264" width="82" height="72" rx="12" class="button"/><text x="25" y="329" class="tiny muted">报警</text></g>
+    <g transform="translate(20 995)"><circle cx="33" cy="16" r="13" fill="none" stroke="#8fa3af" stroke-width="3"/><path d="M33 9v8l6 4" fill="none" stroke="#8fa3af" stroke-width="3"/><text x="0" y="48" class="tiny muted">设置</text></g>
+    <text x="142" y="133" class="title">锁定标记</text><text x="142" y="163" class="small muted">实时光电眼信号 · 触控划定色标检测窗口</text>
+    <g transform="translate(1388 108)"><rect width="114" height="46" rx="8" class="button-active"/><text x="21" y="30" class="small" fill="#27d4ed">实时</text><rect x="122" width="126" height="46" rx="8" class="button"/><text x="145" y="30" class="small muted">已冻结</text><rect x="260" width="114" height="46" rx="8" class="button"/><text x="282" y="30" class="small muted">复位</text></g>
+    <!-- PU tabs -->
+    <g transform="translate(142 194)"><text x="0" y="25" class="small muted">色组</text><g transform="translate(75 0)"><rect width="116" height="54" rx="9" class="button"/><text x="30" y="34" class="body">PU2</text><rect x="126" width="116" height="54" rx="9" class="button"/><text x="156" y="34" class="body">PU3</text><rect x="252" width="116" height="54" rx="9" class="button-active"/><text x="282" y="34" class="body" fill="#27d4ed">PU4</text><rect x="378" width="116" height="54" rx="9" class="button"/><text x="408" y="34" class="body">PU5</text><rect x="504" width="116" height="54" rx="9" class="button"/><text x="534" y="34" class="body">PU6</text><rect x="630" width="116" height="54" rx="9" class="button"/><text x="660" y="34" class="body">PU7</text><rect x="756" width="116" height="54" rx="9" class="button"/><text x="786" y="34" class="body">PU8</text><rect x="882" width="116" height="54" rx="9" class="button"/><text x="912" y="34" class="body">PU9</text><rect x="1008" width="124" height="54" rx="9" class="button"/><text x="1038" y="34" class="body">PU10</text></g></g>
+    <!-- chart -->
+    <g transform="translate(142 286)"><rect width="1286" height="500" rx="16" fill="#0e1d26" stroke="#29404b" stroke-width="2"/><rect x="26" y="26" width="1180" height="350" fill="#0a161d" stroke="#39515d" stroke-width="2"/><g opacity=".6"><line x1="26" y1="114" x2="1206" y2="114" class="line"/><line x1="26" y1="202" x2="1206" y2="202" class="line"/><line x1="26" y1="290" x2="1206" y2="290" class="line"/></g>
+      <path d="M26 296 C70 286 112 312 145 292 S210 272 240 291 S306 314 342 285 S405 290 440 294 S500 285 544 297 S606 263 654 279 S730 304 770 276 S844 285 878 292 S941 263 988 284 S1042 306 1092 274 S1150 300 1206 276" fill="none" stroke="#c8d5db" stroke-width="4"/>
+      <path d="M26 338 L26 320 L90 320 L90 338 L140 338 L140 330 L200 330 L200 338 L265 338 L265 318 L320 318 L320 338 L380 338 L380 325 L440 325 L440 338 L500 338 L500 314 L560 314 L560 338 L620 338 L620 328 L680 328 L680 338 L740 338 L740 318 L800 318 L800 338 L860 338 L860 324 L920 324 L920 338 L980 338 L980 310 L1040 310 L1040 338 L1100 338 L1100 320 L1206 320 L1206 376 L26 376Z" fill="#557a27" opacity=".85"/>
+      <line x1="382" y1="26" x2="382" y2="376" stroke="#40d998" stroke-width="3"/><line x1="512" y1="26" x2="512" y2="376" stroke="#ff4f86" stroke-width="3"/><line x1="608" y1="26" x2="608" y2="376" stroke="#27d4ed" stroke-width="3"/><rect x="430" y="55" width="270" height="250" rx="6" fill="#27d4ed" fill-opacity=".10" stroke="#27d4ed" stroke-width="4" stroke-dasharray="12 8"/><rect x="426" y="51" width="14" height="14" rx="4" fill="#27d4ed"/><rect x="690" y="51" width="14" height="14" rx="4" fill="#27d4ed"/><rect x="426" y="295" width="14" height="14" rx="4" fill="#27d4ed"/><rect x="690" y="295" width="14" height="14" rx="4" fill="#27d4ed"/>
+      <text x="45" y="416" class="tiny muted">0</text><text x="590" y="416" class="tiny muted">600</text><text x="1164" y="416" class="tiny muted">1200</text><text x="30" y="51" class="tiny muted">幅值 100%</text><text x="1070" y="50" class="tiny" fill="#40d998">首色</text><text x="1070" y="76" class="tiny" fill="#ff4f86">前色</text><text x="1070" y="102" class="tiny" fill="#27d4ed">本色</text>
+      <text x="470" y="86" class="small" fill="#27d4ed">检测窗 · x 412–684</text><text x="30" y="462" class="tiny muted">拖动绘制检测窗 · 保存为数据坐标 · 支持移动与删除</text><g transform="translate(1038 430)"><circle cx="8" cy="8" r="6" fill="#40d998"/><text x="23" y="14" class="tiny muted">1200 点 / 500ms</text></g>
+    </g>
+    <!-- right inspector -->
+    <g transform="translate(1454 194)"><rect width="432" height="592" rx="16" class="surface"/><rect width="432" height="74" rx="16" fill="#172b36"/><rect x="24" y="20" width="14" height="34" rx="4" fill="#d92e61"/><text x="56" y="39" class="title" font-size="28">PU4 色组</text><text x="56" y="62" class="tiny muted">洋红 · 光电眼在线</text><text x="320" y="40" class="small" fill="#40d998">● 正常</text>
+      <text x="24" y="112" class="small muted">检测窗坐标</text><line x1="24" y1="128" x2="408" y2="128" class="line"/><text x="24" y="166" class="label">X 起点</text><text x="270" y="166" class="value">412 <tspan class="small muted">sample</tspan></text><text x="24" y="208" class="label">X 终点</text><text x="270" y="208" class="value">684 <tspan class="small muted">sample</tspan></text><text x="24" y="250" class="label">Y 范围</text><text x="270" y="250" class="value">18–86 <tspan class="small muted">%</tspan></text>
+      <text x="24" y="300" class="small muted">色标偏差</text><line x1="24" y1="316" x2="408" y2="316" class="line"/><text x="130" y="352" class="tiny muted">本色</text><text x="222" y="352" class="tiny muted">前色</text><text x="314" y="352" class="tiny muted">首色</text><text x="24" y="388" class="label">纵向</text><text x="126" y="388" class="small">0.00</text><text x="218" y="388" class="small">+0.03</text><text x="310" y="388" class="small" fill="#ffc857">+0.11</text><text x="24" y="430" class="label">横向</text><text x="126" y="430" class="small">0.00</text><text x="218" y="430" class="small">−0.01</text><text x="310" y="430" class="small">+0.02</text><rect x="24" y="474" width="384" height="46" rx="9" class="button-active"/><text x="140" y="504" class="small" fill="#27d4ed">删除检测窗</text><text x="24" y="560" class="tiny muted">偏差单位：mm · 阈值 ±0.10</text></g>
+    <!-- bottom tools -->
+    <g transform="translate(142 824)"><rect width="1744" height="220" rx="16" class="surface"/><text x="24" y="36" class="small muted">操作工具</text><g transform="translate(24 62)"><rect width="178" height="66" rx="10" class="button-active"/><text x="50" y="41" class="body" fill="#27d4ed">画框模式</text><rect x="194" width="178" height="66" rx="10" class="button"/><text x="246" y="41" class="body muted">曲线拖动</text><rect x="388" width="178" height="66" rx="10" class="button"/><text x="442" y="41" class="body muted">窗口微调</text><rect x="582" width="178" height="66" rx="10" class="button"/><text x="634" y="41" class="body muted">版辊微调</text><rect x="776" width="178" height="66" rx="10" class="button"/><text x="828" y="41" class="body muted">冻结曲线</text><rect x="970" width="178" height="66" rx="10" class="button"/><text x="1023" y="41" class="body muted">恢复视图</text></g><text x="24" y="169" class="label">窗口位置</text><rect x="185" y="143" width="152" height="44" rx="8" class="button"/><text x="242" y="171" class="value">0.00 <tspan class="small muted">mm</tspan></text><text x="385" y="169" class="label">版辊微调</text><rect x="548" y="143" width="152" height="44" rx="8" class="button"/><text x="607" y="171" class="value">0.0 <tspan class="small muted">mm</tspan></text><text x="1020" y="169" class="label">信号状态</text><circle cx="1175" cy="162" r="7" fill="#40d998"/><text x="1192" y="169" class="small" fill="#40d998">稳定</text><text x="1460" y="169" class="tiny muted">触控目标 ≥ 48px</text></g>
+  </g>
+
+  <!-- token notes -->
+  <g transform="translate(40 1290)"><text x="0" y="30" class="body" fill="#e8f0f4">Design system / 设计令牌</text><circle cx="270" cy="22" r="10" fill="#27d4ed"/><text x="290" y="30" class="small muted">Primary / 交互青</text><circle cx="510" cy="22" r="10" fill="#40d998"/><text x="530" y="30" class="small muted">Run / 运行</text><circle cx="680" cy="22" r="10" fill="#ffc857"/><text x="700" y="30" class="small muted">Warning / 注意</text><circle cx="870" cy="22" r="10" fill="#ff6565"/><text x="890" y="30" class="small muted">Alarm / 报警</text><text x="1110" y="30" class="small muted">Spacing 8 · Radius 12 · Touch target 48</text></g>
+</svg>
